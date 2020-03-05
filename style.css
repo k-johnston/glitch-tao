@@ -1,0 +1,223 @@
+body {
+	font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #000000;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+	background: snow;
+  position: relative;
+}
+
+header {
+  background-image: url(https://cdn.glitch.com/04b81a53-5df8-4e32-a422-9e1e58e18ef0%2Finky.png);
+  margin: 0;
+  height: 100px;
+  position: relative;
+}
+
+header .glitchButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 2px solid red;
+}
+
+.scroll	{ 
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-color: dark;
+  width: 75vw;
+  height: 70vh;
+  margin: 20px auto;
+  position: relative;
+  background-color: rgba(220, 220, 220, .15);
+}
+
+h1 {
+  font-style: italic;
+  color: snow;
+  margin: 0;
+  width: 100%;
+  font-size: 250%;
+}
+
+h1, #about {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+h1,
+h2,
+li {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  padding-top: 0.83em;
+}
+
+#about,
+section {
+	padding: 0 3em;
+  box-sizing: border-box;
+}
+
+section {
+  display: none;
+}
+
+p {
+	text-align: left;
+	margin-top: 1em;
+	text-indent: 0em;
+  font-size: 1.2em;
+}
+
+p:first-of-type {
+  margin-top: 10px;
+}
+
+#about p {
+  font-size: 180%;
+  margin-top: 0;
+}
+
+#about span {
+  color: darkslateblue;
+}
+
+.poetry {
+  font: 400 1.2em/1.1 inherit;
+  margin: 0;
+  padding-left: 5em;
+  text-indent: -2em;
+  font-style: italic;
+}
+
+.poetry:last-child {
+  margin-bottom: 16px;
+}
+
+#ornamental {
+  margin: 10px 0;
+  text-align: center;
+  display: none;
+}
+
+a,
+a:visited,
+a:active,
+a:focus {
+  color: darkcyan;
+}
+
+a:hover,
+li:hover,
+li:focus,
+li:active {
+  opacity: .8;
+}
+
+footer {
+  width: 70vw;
+  margin: 0 15vw;
+  position: absolute;
+  bottom: 3vh;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0;
+
+}
+
+ul > li {
+  margin: 0 10px;
+  padding: 10px;
+  border-radius: 120px;
+  background: no-repeat 25% darkcyan url(https://cdn.glitch.com/04b81a53-5df8-4e32-a422-9e1e58e18ef0%2Finky.png);
+  width: 150px;
+  height: 24px;
+  color: snow;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+ul > li:first-of-type {
+  background-position: 75%;
+}
+
+.section-display {
+  display: block;
+}
+
+@media (max-width: 1023px) {
+  #about {
+    padding: 0 6em;
+  }
+  
+  .scroll {
+    width: calc(100vw - 6em);
+  }
+}
+
+@media (max-width: 600px) {    
+  h1 {
+    font-size: 200%;
+  }
+  
+  .scroll {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  #about {
+    padding: 1.5em;
+    position: relative;
+    font-size: 75%;
+    top: unset;
+    transform: translateY(0);
+  }
+  
+  section {
+    padding: 0 1em;
+  }
+  
+  .section-display {
+    margin-bottom: 2em;
+  }
+  
+  .section-display:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 4em;
+  }
+  
+  .content-display .section-display,
+  .content-display .section-display:last-of-type {
+    margin-bottom: 2em;
+    padding-bottom: 0;
+  }
+  
+  .poetry {
+    padding-left: 2em;
+    font-size: 1em;
+  }
+  
+  footer {
+    width: unset;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  ul > li {
+    width: 100px;
+  }
+}
