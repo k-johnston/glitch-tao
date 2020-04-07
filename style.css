@@ -1,10 +1,10 @@
 body {
-	font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #000000;
+  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
   margin: 0;
   width: 100vw;
   height: 100vh;
-	background: snow;
+  background: snow;
   position: relative;
 }
 
@@ -17,12 +17,12 @@ header {
 
 header .glitchButton {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  border: 2px solid red;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5vw;
 }
 
-.scroll	{ 
+.scroll {
   overflow-y: scroll;
   scroll-behavior: smooth;
   scrollbar-color: dark;
@@ -30,7 +30,8 @@ header .glitchButton {
   height: 70vh;
   margin: 20px auto;
   position: relative;
-  background-color: rgba(220, 220, 220, .15);
+  background-color: rgba(220, 220, 220, 0.15);
+  z-index: -1;
 }
 
 h1 {
@@ -41,7 +42,8 @@ h1 {
   font-size: 250%;
 }
 
-h1, #about {
+h1,
+#about {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -60,8 +62,9 @@ h2 {
 
 #about,
 section {
-	padding: 0 3em;
+  padding: 0 3em;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 section {
@@ -69,9 +72,9 @@ section {
 }
 
 p {
-	text-align: left;
-	margin-top: 1em;
-	text-indent: 0em;
+  text-align: left;
+  margin-top: 1em;
+  text-indent: 0em;
   font-size: 1.2em;
 }
 
@@ -86,6 +89,10 @@ p:first-of-type {
 
 #about span {
   color: darkslateblue;
+}
+
+#about #text-change {
+  color: #111;
 }
 
 .poetry {
@@ -108,49 +115,56 @@ p:first-of-type {
 
 a,
 a:visited,
+a:hover,
 a:active,
 a:focus {
   color: darkcyan;
 }
 
 a:hover,
-li:hover,
-li:focus,
-li:active {
-  opacity: .8;
+a:focus,
+a:active,
+button:hover,
+button:focus,
+button:active {
+  opacity: 0.8;
+}
+
+button:hover,
+button:focus,
+button:active {
+  -webkit-box-shadow: 2px 2px 10px 1px darkcyan;
+  -moz-box-shadow: 2px 2px 10px 1px darkcyan;
+  box-shadow: 2px 2px 10px 1px darkcyan
 }
 
 footer {
-  width: 70vw;
-  margin: 0 15vw;
-  position: absolute;
-  bottom: 3vh;
-}
-
-ul {
-  list-style-type: none;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: fit-content;
-  margin: 0 auto;
+  margin: 3vh auto;
   padding: 0;
-
 }
 
-ul > li {
-  margin: 0 10px;
+footer button {
+  margin: 0 20px;
   padding: 10px;
+  border: 0;
   border-radius: 120px;
-  background: no-repeat 25% darkcyan url(https://cdn.glitch.com/04b81a53-5df8-4e32-a422-9e1e58e18ef0%2Finky.png);
+  background: no-repeat 25% darkcyan
+    url(https://cdn.glitch.com/04b81a53-5df8-4e32-a422-9e1e58e18ef0%2Finky.png);
   width: 150px;
-  height: 24px;
+  height: 40px;
   color: snow;
-  font-weight: 500;
+  font: 500 100%/1.15 inherit;
+  font-size: 95% !important;
+  overflow: visible;
+  text-transform: none;
   cursor: pointer;
 }
 
-ul > li:first-of-type {
+footer button:first-of-type {
   background-position: 75%;
 }
 
@@ -162,17 +176,30 @@ ul > li:first-of-type {
   #about {
     padding: 0 6em;
   }
-  
+
   .scroll {
     width: calc(100vw - 6em);
   }
 }
 
-@media (max-width: 600px) {    
+@media (max-width: 600px) {
   h1 {
     font-size: 200%;
+    width: 60%;
+    text-align: left;
+    margin-left: 5vw;
   }
-  
+
+  header span {
+    white-space: nowrap;
+  }
+
+  header .glitchButton {
+    top: 5vw;
+    right: 5vw;
+    transform: none;
+  }
+
   .scroll {
     width: 90vw;
     height: 70vh;
@@ -185,39 +212,42 @@ ul > li:first-of-type {
     top: unset;
     transform: translateY(0);
   }
-  
+
   section {
     padding: 0 1em;
   }
-  
+
   .section-display {
     margin-bottom: 2em;
   }
-  
+
   .section-display:last-of-type {
     margin-bottom: 0;
     padding-bottom: 4em;
   }
-  
+
   .content-display .section-display,
   .content-display .section-display:last-of-type {
     margin-bottom: 2em;
     padding-bottom: 0;
   }
-  
+
   .poetry {
     padding-left: 2em;
     font-size: 1em;
   }
-  
+
   footer {
-    width: unset;
-    margin: 0 auto;
+    width: 90vw;
+    position: absolute;
+    bottom: 3vh;
     left: 50%;
     transform: translateX(-50%);
+    margin: 0 auto;
   }
-  
-  ul > li {
-    width: 100px;
+
+  footer button {
+    margin: 0 5px;
+    width: 120px;
   }
 }
